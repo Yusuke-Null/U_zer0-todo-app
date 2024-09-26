@@ -1,0 +1,24 @@
+@import 'header';
+@import 'common';
+@import 'buttons';
+
+$breakpoints: (
+	"sp": "screen and (max-width: 368px)",
+	"pc": "screen and (min-width: 768px)"
+	) !default;
+
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+body {
+	padding-top: 50px;
+
+	@include mq() {}
+}
+
+* {
+	box-sizing: border-box;
+}
