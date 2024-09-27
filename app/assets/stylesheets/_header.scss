@@ -4,10 +4,16 @@
 	height: 50px;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	position: fixed;
+	background-color: #fff;
 	top: 0;
 	left: 0;
 
 	& .header-text {
 		font-size: 18px;
+
+		a {
+			text-decoration: none;
+			color: rgba(0, 0, 0, .7);
+		}
 	}
 }

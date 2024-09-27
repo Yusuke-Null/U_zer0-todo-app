@@ -11,7 +11,8 @@
   %body
     %header.header
       .container
-        %h2.header-text Boards
+        %h2.header-text
+          = link_to 'Boards', boards_path
         - flash.each do |k, v|
           = v
 

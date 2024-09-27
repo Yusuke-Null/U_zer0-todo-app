@@ -1,10 +1,11 @@
+@import 'variables';
+
 .container {
 	padding: 0 20px 0;
 
 	& .card {
 
 		margin: 50px 0;
-		// max-width: calc(100% - 40px);
 
 		& .card-label {
 			margin-bottom: 5px;
@@ -15,7 +16,16 @@
 			padding: 15px;
 			border: none;
 			border-radius: 10px;
-			background: rgba(244, 244, 244, 1);
+			background: $transparent_gray;
+		}
+
+		& .card-textArea {
+			width: 100%;
+			padding: 15px;
+			border: none;
+			border-radius: 10px;
+			background: $transparent_gray;
+			height: 200px;
 		}
 
 	}
