@@ -1,7 +1,9 @@
+@import 'variables';
+
 .btn-primary {
 	width: 100%;
 	color: #fff;
-	background: rgba(248, 189, 28, 1);
+	background: $btn_submit_color;
 	border: none;
 	padding: 10px;
 	border-radius: 4px;

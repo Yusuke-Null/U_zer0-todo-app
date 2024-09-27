@@ -1,6 +1,8 @@
+@import 'variables';
 @import 'header';
 @import 'common';
 @import 'buttons';
+@import 'boards';
 
 $breakpoints: (
 	"sp": "screen and (max-width: 368px)",

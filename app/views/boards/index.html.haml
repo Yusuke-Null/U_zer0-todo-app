@@ -1,0 +1,16 @@
+.container
+	%h2 All Boards
+	%div
+		- @boards.each do |board|
+			.boards
+				.boards-header
+					%h3= board.title
+					= image_tag 'CombinedShape.svg', alt: '編集用ボタン', class: 'board-edit'
+					%ul.board-edit-menu
+						%li
+							= link_to 'Edit', new_board_path
+						%li
+							= link_to 'Delete', new_board_path
+				%p.boards-description= board.description
+	.boards-new
+		= link_to '+ Add new card', new_board_path
