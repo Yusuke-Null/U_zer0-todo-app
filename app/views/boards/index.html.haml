@@ -1,0 +1,8 @@
+.container
+	%h2 All Boards
+	%div
+		- @boards.each do |board|
+			%p= board.title
+			%p= board.description
+
+	= link_to 'new board', new_board_path

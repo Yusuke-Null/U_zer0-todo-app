@@ -12,4 +12,7 @@
     %header.header
       .container
         %h2.header-text Boards
+        - flash.each do |k, v|
+          = v
+
     = yield
