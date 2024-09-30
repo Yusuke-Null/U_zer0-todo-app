@@ -8,12 +8,31 @@
 	top: 0;
 	left: 0;
 
-	& .header-text {
-		font-size: 18px;
+}
 
-		a {
-			text-decoration: none;
-			color: rgba(0, 0, 0, .7);
+.header-item {
+	display: flex;
+	height: 50px;
+	align-items: center;
+
+	& .header--link {
+		& .header-text {
+			font-size: 18px;
+
+			a {
+				text-decoration: none;
+				color: rgba(0, 0, 0, .7);
+			}
 		}
 	}
+
+	& .header--icon {
+		margin-left: auto;
+
+		img {
+			height: 30px;
+		}
+
+	}
+
 }

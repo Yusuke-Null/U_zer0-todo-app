@@ -4,7 +4,7 @@
 		%ul
 			- @board.errors.full_messages.each do |message|
 				%li= message
-	= form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
+	= form_with(model: @board, url: board_path, method: 'put', local: true) do |f|
 		.card
 			%div
 				= f.label :title, :Name, class: 'card-label'

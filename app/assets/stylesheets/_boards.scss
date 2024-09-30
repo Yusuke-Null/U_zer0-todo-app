@@ -10,21 +10,12 @@
 
 	& .boards-header {
 		display: flex;
-
-		& .board-edit {
-			margin-left: auto;
-
-
-		}
-
-		.board-edit-menu {
-			list-style: none;
-		}
+		align-items: center;
 	}
 
-
-
-	& .boards-description {}
+	& .boards-description {
+		color: rgba(0, 0, 0, .5);
+	}
 }
 
 .boards-new {
