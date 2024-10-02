@@ -1,0 +1,83 @@
+@import 'variables';
+
+.container {
+	padding: 0 20px 0;
+}
+
+.card {
+	margin: 50px 0;
+
+	& .card-item {
+
+		margin-bottom: 30px;
+
+		& .card-label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		& .card-text {
+			width: 100%;
+			padding: 15px;
+			border: none;
+			border-radius: 10px;
+			background: $transparent_gray;
+		}
+
+		& .card-textArea {
+			width: 100%;
+			padding: 15px;
+			border: none;
+			border-radius: 10px;
+			background: $transparent_gray;
+			min-height: 200px;
+			white-space: pre-wrap;
+			line-height: $line-height-spacing;
+		}
+
+		& .card-dropdown {
+			width: 100%;
+			background: $transparent_gray;
+			border-radius: 5px;
+			padding: 15px;
+		}
+	}
+}
+
+.dropdown {
+	margin-left: auto;
+	align-items: center;
+	position: relative;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	right: 0;
+	border-radius: 10px;
+
+	& .dropdown-menu {
+		list-style: none;
+		padding: 0 20px;
+
+		& .dropdown-menu-item {
+			margin-top: 10px;
+
+			& .dropdown-menu-item--link {
+				writing-mode: horizontal-tb;
+				text-decoration: none;
+				color: #000;
+
+			}
+		}
+	}
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+	background-color: #fff;
+}
+
+.dropdown-menu-item--link:hover {
+	opacity: .7;
+}

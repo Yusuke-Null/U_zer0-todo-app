@@ -1,0 +1,25 @@
+.profile-field {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+
+	& .profile-avatar {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+	}
+
+	& .profile-name {
+		margin-bottom: 30px;
+	}
+
+	& .profile-introduction {
+		text-align: left;
+		width: 100%;
+		background-color: $transparent_gray;
+		padding: 15px;
+		min-height: 100px;
+		white-space: pre-wrap;
+		font-size: $min-font-size;
+	}
+}

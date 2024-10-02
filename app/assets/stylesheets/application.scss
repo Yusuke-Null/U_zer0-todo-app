@@ -2,7 +2,8 @@
 @import 'header';
 @import 'common';
 @import 'buttons';
-@import 'boards';
+@import 'board';
+@import 'profile';
 
 $breakpoints: (
 	"sp": "screen and (max-width: 368px)",

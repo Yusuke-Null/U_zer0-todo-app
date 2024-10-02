@@ -7,12 +7,9 @@ class User < ApplicationRecord
   has_many :boards
   has_one :profile, dependent: :destroy
 
-  def has_profile?
-    build_profile || self.profile
+  def prepare_profile
+    profile || build_profile
   end
 
-  def has_avatar?
-
-  end
   # delegate :user, to: :profile, allow_nil: true
 end

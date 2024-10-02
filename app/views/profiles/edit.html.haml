@@ -1,0 +1,24 @@
+.container
+	%h2 Profile Edit
+	= form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+		.card
+			.card-item
+				= f.label :nickname, 'ニックネーム', class: 'card-label'
+				= f.text_field :nickname, class: 'card-text'
+			.card-item
+				= f.label :introduction, '自己紹介', class: 'card-label'
+				= f.text_area :introduction, class: 'card-textArea'
+			.card-item
+				= f.label :gender, '性別', class: 'card-label'
+				= f.select :gender , [["male", 0],["female", 1],["other", 2]], {} ,class: 'card-dropdown'
+			.card-item
+				= f.label :birthday, '生年月日', class: 'card-label'
+				= f.date_field :birthday, class: 'card-text'
+			.card-item
+				= f.label :avatar, 'アイコン', class: 'card-label'
+				= f.file_field :avatar
+			.card-item
+				= f.label :subscribed, '通知を受け取る'
+				= f.check_box :subscribed
+
+			= f.submit 'Submit', class: 'btn-primary'
