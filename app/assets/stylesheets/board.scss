@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'images';
 
 .boards {
 	background: $transparent_gray;
@@ -11,11 +12,31 @@
 	& .boards-header {
 		display: flex;
 		align-items: center;
+		padding-bottom: 0;
+		margin-bottom: 0;
 	}
 
 	& .boards-description {
 		color: rgba(0, 0, 0, .5);
+		margin-top: 0;
+		margin-bottom: 40px;
 	}
+
+	& .boards-user-info {
+		margin-bottom: 10px;
+
+		& .boards-author-icon {
+			@include imageIcon(35px);
+			vertical-align: middle;
+		}
+
+		& .boards-user-name {
+			margin-left: 5px;
+			vertical-align: middle;
+			font-size: $min-font-size;
+		}
+	}
+
 }
 
 .boards-new {
@@ -24,14 +45,4 @@
 	border-radius: 10px;
 	min-height: 185px;
 	align-content: center;
-
-	& a {
-		text-decoration: none;
-		color: #000;
-
-		&:hover {
-			opacity: .7;
-		}
-	}
-
 }

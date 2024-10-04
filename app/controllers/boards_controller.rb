@@ -3,6 +3,7 @@ class BoardsController < ApplicationController
 
   def index
     # 記事を全て取得
+    @user = User.new
     @boards = Board.all
   end
 

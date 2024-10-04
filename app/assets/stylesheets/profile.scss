@@ -1,12 +1,14 @@
+@import 'variables';
+@import 'images';
+
+
 .profile-field {
 	width: 100%;
 	text-align: center;
 	margin-bottom: 20px;
 
 	& .profile-avatar {
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
+		@include imageIcon(100px);
 	}
 
 	& .profile-name {

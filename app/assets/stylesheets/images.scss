@@ -1,0 +1,6 @@
+@mixin imageIcon($radius) {
+	width: $radius;
+	height: $radius;
+	border-radius: 50%;
+	object-fit: cover;
+}

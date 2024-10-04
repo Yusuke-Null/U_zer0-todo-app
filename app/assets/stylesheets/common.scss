@@ -81,3 +81,12 @@
 .dropdown-menu-item--link:hover {
 	opacity: .7;
 }
+
+.link-text {
+	text-decoration: none;
+	color: #000;
+
+	&:hover {
+		opacity: .7;
+	}
+}

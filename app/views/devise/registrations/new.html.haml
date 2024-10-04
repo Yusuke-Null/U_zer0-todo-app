@@ -4,22 +4,22 @@
     = render "devise/shared/error_messages", resource: resource
     .field
       .card
-        = f.label :email, class: 'card-label'
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'card-text'
+        .card-item
+          = f.label :email, class: 'card-label'
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'card-text'
     .field
       .card
-        = f.label :password, class: 'card-label'
-        - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
-        %br/
-        = f.password_field :password, autocomplete: "new-password", class: 'card-text'
+        .card-item
+          = f.label :password, class: 'card-label'
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          = f.password_field :password, autocomplete: "new-password", class: 'card-text'
     .field
       .card
-        = f.label :password_confirmation, class: 'card-label'
-        %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'card-text'
+        .card-item
+          = f.label :password_confirmation, class: 'card-label'
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'card-text'
     .actions
       = f.submit "Sign up", class: 'btn-primary'
   -# = render "devise/shared/links"
