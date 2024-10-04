@@ -1,0 +1,25 @@
+@import 'variables';
+
+.btn-primary {
+	width: 100%;
+	color: #fff;
+	background: $btn_submit_color;
+	border: none;
+	padding: 10px;
+	border-radius: 4px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	top: 0;
+}
+
+.btn--link {
+	width: 100%;
+	display: block;
+	color: $color-white;
+	background-color: $btn-primary;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px 0;
+	font-weight: bold;
+	letter-spacing: .1em;
+}

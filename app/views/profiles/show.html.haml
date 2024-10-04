@@ -1,11 +1,8 @@
 .container
-	%h2 Profile
-	= link_to 'プロフィール編集', edit_profile_path
-	%div
-		= @profile.avatar
-	%div
-		%label ニックネーム
-		%p= @profile.nickname
-	%div
-		%label 自己紹介
-		%p= @profile.introduction
+	.profile-field
+		%h2 Profile
+		= image_tag current_user.has_avatar?(current_user.id), alt: 'ユーザーアイコン', class: 'profile-avatar'
+		%p.profile-name= @profile.nickname
+		%p.profile-introduction= @profile.introduction
+
+	= link_to 'Edit', edit_profile_path, class: 'btn--link'

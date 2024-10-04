@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'images';
+
+.boards {
+	background: $transparent_gray;
+	padding: 5px 20px;
+	margin-bottom: 20px;
+	min-height: 185px;
+	border-radius: 10px;
+	overflow-wrap: break-word;
+
+	& .boards-header {
+		display: flex;
+		align-items: center;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	& .boards-description {
+		color: rgba(0, 0, 0, .5);
+		margin-top: 0;
+		margin-bottom: 40px;
+	}
+
+	& .boards-user-info {
+		margin-bottom: 10px;
+
+		& .boards-author-icon {
+			@include imageIcon(35px);
+			vertical-align: middle;
+		}
+
+		& .boards-user-name {
+			margin-left: 5px;
+			vertical-align: middle;
+			font-size: $min-font-size;
+		}
+	}
+
+}
+
+.boards-new {
+	border: 3px dashed $transparent_gray;
+	text-align: center;
+	border-radius: 10px;
+	min-height: 185px;
+	align-content: center;
+}

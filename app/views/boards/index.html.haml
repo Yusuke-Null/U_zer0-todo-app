@@ -14,6 +14,10 @@
 										= link_to 'Edit', edit_board_path(board), class: 'dropdown-menu-item--link'
 									%li.dropdown-menu-item
 										= link_to 'Delete', board_path(board),  method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'dropdown-menu-item--link'
-				%p.boards-description= board.description
-	.boards-new
-		= link_to '+ Add new card', new_board_path
+				= simple_format(h(board.description), class: 'boards-description')
+				.boards-user-info
+					= image_tag @user.has_avatar?(board.user_id), alt: 'ユーザーアイコン', class: 'boards-author-icon'
+					%span.boards-user-name= @user.has_nickname?(board.user_id)
+		= link_to new_board_path, class: 'link-text' do
+			.boards-new
+				%p+ Add new card

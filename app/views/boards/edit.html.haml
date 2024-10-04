@@ -1,18 +1,1 @@
-.container
-	%h2 New Board
-	- if @board.errors.any?
-		%ul
-			- @board.errors.full_messages.each do |message|
-				%li= message
-	= form_with(model: @board, url: board_path, method: 'put', local: true) do |f|
-		.card
-			%div
-				= f.label :title, :Name, class: 'card-label'
-			%div
-				= f.text_field :title, class: 'card-text'
-		.card
-			%div
-				= f.label :description, class: 'card-label'
-			%div
-				= f.text_area :description, class: 'card-textArea'
-		= f.submit 'Submit', class: 'btn-primary'
+= render partial: 'common/board.html.haml', locals: {board: @board, path: board_path, method: 'put'}

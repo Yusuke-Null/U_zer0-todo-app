@@ -15,17 +15,16 @@
           .header--link
             %h2.header-text
               = link_to 'Boards', boards_path
-          .header--icon
-            .dropdown
-              = image_tag 'default-avatar.png', alt: 'プロフィールアイコン'
-              .dropdown-content
-                %ul.dropdown-menu
-                  %li.dropdown-menu-item
-                    = link_to 'Profie', profile_path, class: 'dropdown-menu-item--link'
-                  %li.dropdown-menu-item
-                    = link_to 'SignOut', destroy_user_session_path, method: :delete, class: 'dropdown-menu-item--link'
-
-          - flash.each do |k, v|
-            = v
-
+          - if user_signed_in?
+            .header--icon
+              .dropdown
+                = image_tag current_user.has_avatar?(current_user.id), alt: 'ユーザーアイコン'
+                .dropdown-content
+                  %ul.dropdown-menu
+                    %li.dropdown-menu-item
+                      = link_to 'Profie', profile_path, class: 'dropdown-menu-item--link'
+                    %li.dropdown-menu-item
+                      = link_to 'SignOut', destroy_user_session_path, method: :delete, class: 'dropdown-menu-item--link'
+        - flash.each do |k, v|
+          = v
     = yield
