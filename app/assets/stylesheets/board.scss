@@ -16,6 +16,15 @@
 		margin-bottom: 0;
 	}
 
+	& .boards-title {
+		text-decoration: none;
+		color: $color-black;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+
 	& .boards-description {
 		color: rgba(0, 0, 0, .5);
 		margin-top: 0;

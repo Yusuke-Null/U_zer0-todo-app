@@ -1,0 +1,17 @@
+.container
+	- if @task.errors.any?
+		%ul
+			- @task.errors.full_messages.each do |message|
+				%li= message
+	= form_with(model: @task, url: board_tasks_path, method: 'post', local: true) do |f|
+		.card
+			.card-item
+				= f.label :title, :Title, class: 'card-label'
+				= f.text_field :title, class: 'card-text'
+			.card-item
+				= f.label :content, class: 'card-label'
+				= f.text_area :content, class: 'card-textArea'
+			.card-item
+				= f.label :deadline, class: 'card-label'
+				= f.date_field :deadline, class: 'card-textArea'
+		= f.submit 'Submit', class: 'btn-primary'

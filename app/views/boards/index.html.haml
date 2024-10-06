@@ -1,23 +1,6 @@
 .container
 	%h2 All Boards
-	%div
-		- @boards.each do |board|
-			.boards
-				.boards-header
-					%h3= board.title
-					- if current_user.id == board.user_id
-						.dropdown
-							= image_tag 'CombinedShape.svg', alt: '編集用ボタン'
-							.dropdown-content
-								%ul.dropdown-menu
-									%li.dropdown-menu-item
-										= link_to 'Edit', edit_board_path(board), class: 'dropdown-menu-item--link'
-									%li.dropdown-menu-item
-										= link_to 'Delete', board_path(board),  method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'dropdown-menu-item--link'
-				= simple_format(h(board.description), class: 'boards-description')
-				.boards-user-info
-					= image_tag @user.has_avatar?(board.user_id), alt: 'ユーザーアイコン', class: 'boards-author-icon'
-					%span.boards-user-name= @user.has_nickname?(board.user_id)
-		= link_to new_board_path, class: 'link-text' do
-			.boards-new
-				%p+ Add new card
+	= render partial: 'common/index.html.haml'
+	= link_to new_board_path, class: 'link-text' do
+		.boards-new
+			%p+ Add new card
