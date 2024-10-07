@@ -9,11 +9,26 @@
 	border-radius: 10px;
 	overflow-wrap: break-word;
 
+	& .boards-eyecatch {
+		width: 100%;
+		margin: 10px 0;
+		border-radius: 10px;
+	}
+
 	& .boards-header {
 		display: flex;
 		align-items: center;
 		padding-bottom: 0;
 		margin-bottom: 0;
+	}
+
+	& .boards-title {
+		text-decoration: none;
+		color: $color-black;
+
+		&:hover {
+			opacity: .7;
+		}
 	}
 
 	& .boards-description {

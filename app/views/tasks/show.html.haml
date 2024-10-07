@@ -1,0 +1,14 @@
+.container
+	.task-header
+		%h2= @task.title
+		= render partial: 'common/dropdown.html.haml', locals: {edit_path: edit_board_task_path(id: @task.id, board_id: @task.board_id), delete_path: board_task_path(id: @task.id, board_id: @task.board_id)}
+	%p.task-header-deadline= "deadline - #{@task.deadline}"
+	- if @task.eyecatch.attached?
+		= image_tag @task.eyecatch, alt: 'タスクのアイキャッチ', class: 'task-eyecatch'
+	.task-text
+		= @task.content
+	%h3 Comment
+	= image_tag '', alt: 'コメント者のアイコン画像'
+	%span fdasfdsafdsafdsfdsfdsafdsfdsafdsa
+	-# コメント追加機能
+	= link_to 'タスク一覧', board_tasks_path, class: 'btn--link'

@@ -1,0 +1,14 @@
+.container
+	%h2= @board.title
+	- @tasks.all.each do |task|
+		.boards
+			- if task.eyecatch.attached?
+				= image_tag task.eyecatch, alt: 'タスクのアイキャッチ', class: 'boards-eyecatch'
+			.boards-header
+				%h3= link_to task.title, board_task_path(id: task.id), class: 'boards-title'
+			= simple_format(h(task.content), class: 'boards-description')
+			.boards-user-info
+				= image_tag @user.has_avatar?(task.user_id), alt: 'ユーザーアイコン', class: 'boards-author-icon'
+	= link_to new_board_task_path(@board), class: 'link-text' do
+		.boards-new
+			%p+ Add new card
