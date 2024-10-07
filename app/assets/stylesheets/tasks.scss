@@ -1,0 +1,23 @@
+@import 'variables';
+
+.task-header {
+	display: flex;
+	align-items: center;
+
+	& .task-header-deadline {
+		display: block;
+	}
+}
+
+.task-eyecatch {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.task-text {
+	background-color: $transparent_gray;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 30px;
+	min-height: 100px;
+}
