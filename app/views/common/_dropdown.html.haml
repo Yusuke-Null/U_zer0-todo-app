@@ -1,0 +1,8 @@
+.dropdown
+	= image_tag 'CombinedShape.svg', alt: '編集用ボタン'
+	.dropdown-content
+		%ul.dropdown-menu
+			%li.dropdown-menu-item
+				= link_to 'Edit', edit_path, class: 'dropdown-menu-item--link'
+			%li.dropdown-menu-item
+				= link_to 'Delete', delete_path,  method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'dropdown-menu-item--link'

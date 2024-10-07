@@ -1,6 +1,5 @@
 .container
 	%h2= @board.title
-	-# = render partial: 'common/index.html.haml' ,locals: {boards: @board.tasks.all, path: board_task_path}
 	- @tasks.all.each do |task|
 		.boards
 			- if task.eyecatch.attached?

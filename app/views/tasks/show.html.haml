@@ -1,14 +1,7 @@
 .container
 	.task-header
 		%h2= @task.title
-		.dropdown
-			= image_tag 'CombinedShape.svg', alt: '編集用ボタン'
-			.dropdown-content
-				%ul.dropdown-menu
-					%li.dropdown-menu-item
-						= link_to 'Edit', edit_board_task_path(id: @task.id, board_id: @task.board_id), class: 'dropdown-menu-item--link'
-					%li.dropdown-menu-item
-						= link_to 'Delete', board_task_path(id: @task.id, board_id: @task.board_id),  method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'dropdown-menu-item--link'
+		= render partial: 'common/dropdown.html.haml', locals: {edit_path: edit_board_task_path(id: @task.id, board_id: @task.board_id), delete_path: board_task_path(id: @task.id, board_id: @task.board_id)}
 	%p.task-header-deadline= "deadline - #{@task.deadline}"
 	- if @task.eyecatch.attached?
 		= image_tag @task.eyecatch, alt: 'タスクのアイキャッチ', class: 'task-eyecatch'
@@ -18,3 +11,4 @@
 	= image_tag '', alt: 'コメント者のアイコン画像'
 	%span fdasfdsafdsafdsfdsfdsafdsfdsafdsa
 	-# コメント追加機能
+	= link_to 'タスク一覧', board_tasks_path, class: 'btn--link'
