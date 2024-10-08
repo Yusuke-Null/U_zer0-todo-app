@@ -1,0 +1,12 @@
+.container
+	%h2 New Comment
+	- if @comment.errors.any?
+		%ul
+			- @comment.errors.full_messages.each do |message|
+				%li= message
+	= form_with(model: @comment, url: board_task_comments_path, method: 'post', local: true) do |f|
+		.card
+			.card-item
+				= f.label :comment, class: 'card-label'
+				= f.text_area :comment, class: 'card-textArea'
+		= f.submit 'Sumbit', class: 'btn-primary'
