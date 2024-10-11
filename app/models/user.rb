@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :boards
   has_many :tasks
+  has_many :comments
   has_one :profile, dependent: :destroy
 
   def prepare_profile
