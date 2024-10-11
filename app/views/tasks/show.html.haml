@@ -9,12 +9,14 @@
 		= @task.content
 	%h3 Comment
 	- if @task.has_comment?(params[:id])
-		- @task.comments.where(task_id: @task.id).each do |comment|
-			= image_tag User.find(comment.user_id).profile.avatar, alt: 'コメント者のアイコン画像'
-			%span= comment.comment
+		.comment-board
+			- @task.comments.where(task_id: @task.id).each do |comment|
+				.comment-card
+					= image_tag User.find(comment.user_id).profile.avatar, alt: 'コメント者のアイコン画像', class: 'commenter-icon'
+					%span.comment-text= comment.comment
 
 	= link_to new_board_task_comment_path(task_id: @task.id), class: 'link-text' do
-		.boards-new
+		.comment-new
 			%p+ Add new comment
 	-# コメント追加機能
 	= link_to 'タスク一覧', board_tasks_path, class: 'btn--link'

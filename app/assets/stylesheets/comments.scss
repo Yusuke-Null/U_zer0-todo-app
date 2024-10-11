@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'images';
+
+.comment-board {
+	margin: 20px 0 30px;
+	letter-spacing: .05em;
+
+	& .comment-card {
+		width: 100%;
+		margin-bottom: 20px;
+		display: flex;
+		align-items: center;
+
+		& .commenter-icon {
+			@include imageIcon(40px);
+		}
+
+		& .comment-text {
+			margin-left: 10px;
+			font-size: $min-font-size;
+			line-height: 1.4rem;
+			overflow-wrap: break-word;
+			word-break: break-word;
+		}
+	}
+}
+
+.comment-new {
+	border: 3px dashed $transparent_gray;
+	text-align: center;
+	border-radius: 10px;
+	height: 100px;
+	align-content: center;
+	margin-bottom: 30px;
+}
