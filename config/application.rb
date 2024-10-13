@@ -11,8 +11,10 @@ module UZer0Todoapp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.i18n.default_locale = :ja
-    Bundler.require(*Rails.groups)
-    Dotenv::Railtie.load
+    if Rails.env.development? || Rails.env.test?
+      Bundler.require(*Rails.groups)
+      Dotenv::Railtie.load
+    end
     Aws.use_bundled_cert!
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
