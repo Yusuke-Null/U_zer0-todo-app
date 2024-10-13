@@ -1,0 +1,19 @@
+{
+	"name": "todo-apps-u",
+	"description": "This is todoapp",
+	"keywords": [],
+	"website": "",
+	"repository": "https://github.com/Yusuke-Null/U_zer0-todo-app",
+	"env": {},
+	"addons": [
+		"heroku-postgresql:hobby-dev"
+	],
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		},
+		{
+			"url": "heroku/ruby"
+		}
+	]
+}
