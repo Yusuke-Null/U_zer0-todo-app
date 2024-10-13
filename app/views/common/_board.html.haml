@@ -7,9 +7,9 @@
 	= form_with(model: board, url: path, method: method, local: true) do |f|
 		.card
 			.card-item
-				= f.label :title, :Title, class: 'card-label'
+				= f.label :title, 'Title', class: 'card-label'
 				= f.text_field :title, class: 'card-text'
 			.card-item
-				= f.label :description, class: 'card-label'
+				= f.label :description, 'Description', class: 'card-label'
 				= f.text_area :description, class: 'card-textArea'
 		= f.submit 'Submit', class: 'btn-primary'
