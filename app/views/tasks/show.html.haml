@@ -12,7 +12,7 @@
 		.comment-board
 			- @task.comments.where(task_id: @task.id).each do |comment|
 				.comment-card
-					= image_tag User.find(comment.user_id).profile.avatar, alt: 'コメント者のアイコン画像', class: 'commenter-icon'
+					= image_tag @user.has_avatar?(comment.user_id), alt: 'コメント者のアイコン画像', class: 'commenter-icon'
 					%span.comment-text= comment.comment
 
 	= link_to new_board_task_comment_path(task_id: @task.id), class: 'link-text' do

@@ -24,6 +24,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @user = User.new
   end
 
   def edit
