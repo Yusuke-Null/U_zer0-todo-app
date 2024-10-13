@@ -10,7 +10,7 @@
 				= f.text_area :introduction, class: 'card-textArea'
 			.card-item
 				= f.label :gender, '性別', class: 'card-label'
-				= f.select :gender , [["male", 0],["female", 1],["other", 2]], {} ,class: 'card-dropdown'
+				= f.select :gender , @profile.get_genders, {} ,class: 'card-dropdown'
 			.card-item
 				= f.label :birthday, '生年月日', class: 'card-label'
 				= f.date_field :birthday, class: 'card-text'

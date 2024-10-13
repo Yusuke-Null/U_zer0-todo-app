@@ -12,8 +12,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to board_task_path(id: params[:task_id]), notice: 'コメントを登録しました'
     else
-      flash.now[:error] = 'コメントの登録に失敗しました'
-      render :new
+      redirect_to new_board_task_comment_path, notice: 'コメントの登録に失敗しました'
     end
   end
 

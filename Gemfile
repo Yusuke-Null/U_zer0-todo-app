@@ -33,6 +33,8 @@ gem 'hamlit'
 gem 'annotate'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-core'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -40,6 +42,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rubocop-rails'
   gem 'erb2haml'
+  gem 'dotenv-rails'
 end
 
 group :development do

@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to boards_path, notice: '登録に成功しました'
     else
-      flash.now[:notice] = '登録に失敗しました'
+      flash.now[:error] = '登録に失敗しました'
       render :new
     end
   end
@@ -30,7 +30,8 @@ class BoardsController < ApplicationController
     if @board.update(board_params)
       redirect_to boards_path, notice: '更新しました'
     else
-      redirect_to boards_path, notice: '更新出来ませんでした'
+      flash.now[:error] = '更新出来ませんでした'
+      render :edit
     end
   end
 
