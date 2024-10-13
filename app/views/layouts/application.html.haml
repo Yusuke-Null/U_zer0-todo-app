@@ -25,7 +25,8 @@
                       = link_to 'Profie', profile_path, class: 'dropdown-menu-item--link'
                     %li.dropdown-menu-item
                       = link_to 'SignOut', destroy_user_session_path, method: :delete, class: 'dropdown-menu-item--link'
-        .flash-area
-          - flash.each do |k, v|
-            = v
+    - if flash.present?
+      .flash
+        - flash.each do |k, v|
+          = v
     = yield
